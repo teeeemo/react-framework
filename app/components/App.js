@@ -1,30 +1,53 @@
 /**
  * Created by zhangtingcen on 2017/5/18.
  */
+
 import React from 'react';
 
-import Info from './Info';
-import About from './About';
+import {HashRouter as Router, Route, NavLink, Switch} from 'react-router-dom';
 
-import {Router,Route, Link} from 'react-router-dom';
+import HeadNav from './header/HeadNav';
+
+import Index from './index/Index';
+import Info from './info/Info';
+import About from './about/About';
+import Fruit from './fruit/Fruit';
 
 class App extends React.Component {
     render() {
         return (
-            <div>
-                <h1>App</h1>
-                <ul>
-                    <li><Link to="/app/about" replace={true}>About</Link></li>
-                    <li><Link to="/app/info">Info</Link></li>
-                </ul>
-                <hr/>
-                <div>
-                    <Route path="/app/info" component={Info}/>
-                    <Route path="/app/about" component={About}/>
+            <div className="app">
+                <h1>lalala</h1>
+                <div className="header">
+                    <HeadNav />
+                    <ul>
+                        <li><NavLink to='index' activeClassName="selected" activeStyle={{
+                            fontWeight: 'bold',
+                            color: 'white'
+                        }}>index</NavLink></li>
+                        <li><NavLink to='info' activeClassName="selected" activeStyle={{
+                            fontWeight: 'bold',
+                            color: 'white'
+                        }}>info</NavLink></li>
+                        <li><NavLink to='about' activeClassName="selected" activeStyle={{
+                            fontWeight: 'bold',
+                            color: 'white'
+                        }}>about</NavLink></li>
+                        <li><NavLink to='fruit' activeClassName="selected" activeStyle={{
+                            fontWeight: 'bold',
+                            color: 'white'
+                        }}>fruit</NavLink></li>
+                    </ul>
                 </div>
+                <Switch className="body">
+                    <Route exact path="/" component={Index}/>
+                    <Route exact path="/index" component={Index}/>
+                    <Route exact path="/info" component={Info}/>
+                    <Route exact path="/about" component={About}/>
+                    <Route exact path="/fruit" component={Fruit}/>
+                </Switch>
             </div>
         )
     }
 }
-
 export default App;

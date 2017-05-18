@@ -33,6 +33,7 @@
     "babel-preset-stage-2": "^6.24.1",
     "babel-preset-stage-3": "^6.24.1",
     "css-loader": "^0.28.1",
+    "history": "^4.6.1",
     "less": "^2.7.2",
     "less-loader": "^4.0.3",
     "prop-types": "^15.5.10",

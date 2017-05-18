@@ -1,13 +1,16 @@
+/**
+ * Created by zhangtingcen on 2017/5/18.
+ */
+
 import React from 'react';
 
-class About extends React.Component {
+class About extends React.Component{
     render() {
         return (
             <div className="about">
-                about tingcen.zhang
+                about
             </div>
         )
     }
 }
-
 export default About;
